@@ -202,7 +202,11 @@ h2 {
 .border-top-left-rounded {
     border-top-left-radius: 30px;
 }
-
+@media screen and (max-width: 767px){
+    .border-bottom-right-rounded-to-lg {
+        border-bottom-right-radius: 30px;
+    }
+}
 .border-bottom-left-rounded {
     border-bottom-left-radius: 30px;
 }
