@@ -792,7 +792,7 @@ div.swal2-popup.swal2-modal .swal2-actions button {
 }
 
 .copyright-text > p > a {
-    color: var(--clr-accent);
+    color: var(--clr-primary);
 }
 
 /* responsive */
