@@ -1,0 +1,115 @@
+.open {
+    width: 50px;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+}
+.open.oppenned:nth-child(2){
+    cursor: initial;
+}
+.open.oppenned .cls{
+    cursor: pointer;
+}
+.open span {
+    display: block;
+    float: left;
+    clear: both;
+    height: 4px;
+    width: 34px;
+    border-radius: 40px;
+    background-color: var(--background);
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.open span:nth-child(1) {
+    margin-top: 10px;
+    z-index: 9;
+}
+
+.open span:nth-child(2) { margin-top: 22px; }
+
+.open span:nth-child(3) { margin-top: 34px; }
+
+.sub-menu {
+    transition: all 0.5s ease;
+    height: 0;
+    width: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background-color: #26B691;
+    opacity: 0.5;
+    border-radius: 50%;
+    z-index: 18;
+    overflow: hidden;
+}
+
+.sub-menu li {
+    display: block;
+    float: right;
+    clear: both;
+    height: auto;
+    margin-right: -160px;
+    transition: all 0.5s ease;
+}
+
+.sub-menu li:first-child { margin-top: 215px; }
+
+.sub-menu li:nth-child(1) { -webkit-transition-delay: 0.1s; }
+
+.sub-menu li:nth-child(2) { -webkit-transition-delay: 0.15s; }
+
+.sub-menu li:nth-child(3) { -webkit-transition-delay: 0.2s; }
+
+.sub-menu li:nth-child(4) { -webkit-transition-delay: 0.25s; }
+
+.sub-menu li:nth-child(5) { -webkit-transition-delay: 0.3s; }
+.sub-menu li a{
+    color: var(--background);
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    float: left;
+    line-height: 40px;
+    transition: color 0.4s ease;
+}
+.sub-menu li:hover a{
+    color: var(--foreground);
+}
+
+.oppenned .sub-menu {
+    opacity: 1;
+    height: 400px;
+    width: 400px;
+}
+
+.oppenned span:nth-child(2) { overflow: visible; }
+
+.oppenned span:nth-child(1),
+.oppenned span:nth-child(3) {
+    z-index: 100;
+    transform: rotate(45deg);
+}
+
+.oppenned span:nth-child(1) { transform: rotate(45deg) translateY(5px) translateX(10px); }
+
+.oppenned span:nth-child(2) {
+    height: 400px;
+    width: 400px;
+    right: -160px;
+    top: -160px;
+    border-radius: 50%;
+    background-color: #61b695;
+}
+.oppenned span:nth-child(3) { transform: rotate(-45deg) translateY(-7px) translateX(12px); }
+
+.oppenned li { margin-right: 168px; }
+
+.open.oppenned .sub-menu li a.active{
+    color: var(--foreground);
+}

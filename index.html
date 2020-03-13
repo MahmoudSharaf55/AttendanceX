@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#1f9678">
+    <meta name="msapplication-navbutton-color" content="#1f9678">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1f9678">
+    <title>AttendanceX | الرئيسية</title>
+    <link rel="icon" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/themify-icons.css" rel="stylesheet">
+    <link href="css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu_style.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<button id="dark-mode-toggle" class="btn btn-primary d-flex"
+        style="position: fixed;bottom:10px;z-index: 1000;min-width: 30px;height: 40px">
+    <i class="fa fa-sun-o"></i>
+</button>
+<div id="preloader">
+    <div class="color-load"></div>
+</div>
+<div class="nav-menu fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-dark">
+                    <a class="navbar-brand p-0" href="index.html">
+                        <img src="img/logoAR.png" alt="" height="65">
+                    </a>
+                    <div class="open"><span class="cls"></span> <span>
+                  <ul class="sub-menu">
+                    <li> <a href="#" class="active">الرئيسية</a> </li>
+                    <li> <a href="#">من نحن</a> </li>
+                    <li> <a href="pages/admin_login.html">المسئول</a> </li>
+                  </ul>
+                  </span> <span class="cls"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="wellcome_area page_content" id="home">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 col-md">
+                <div class="wellcome-heading">
+                    <h2>AttendanceX</h2>
+                    <p>Take attendance anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer-contact-area section_padding_100" id="contact" style="margin-bottom: 300px">
+    <div class="container">
+        <div class="row">
+            <div style="height: 300px">
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer-social-icon text-center">
+    <div class="footer-text">
+        <img src="img/logoEN.png" alt="" height="85" class="m-auto">
+    </div>
+    <div class="footer-social-icon">
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+    </div>
+    <div class="copyright-text">
+        <p>AttendanceX |
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+        </P>
+        <p>Designed by
+            <a
+                    href="https://www.facebook.com/mahmoud.abdalla.sharaf55"><span>Ma7MOoOD SHaRaF</span>
+            </a>
+        </p>
+    </div>
+</footer>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/footer-reveal.min.js"></script>
+<script src="js/active.js"></script>
+<script src="js/plugin.js"></script>
+</body>
+<script>
+    $(document).ready(function () {
+        $(document).delegate('.open', 'click', function (event) {
+            $(this).addClass('oppenned');
+            event.stopPropagation();
+        })
+        $(document).delegate('body', 'click', function (event) {
+            $('.open').removeClass('oppenned');
+        })
+        $(document).delegate('.cls', 'click', function (event) {
+            $('.open').removeClass('oppenned');
+            event.stopPropagation();
+        });
+    });
+
+    function menuscroll() {
+        var $navmenu = $('.nav-menu');
+        if ($(window).scrollTop() > 50) {
+            $navmenu.addClass('is-scrolling');
+        } else {
+            $navmenu.removeClass("is-scrolling");
+        }
+    }
+
+    menuscroll();
+    window.onscroll = () => {
+        menuscroll();
+    };
+</script>
+</html>
