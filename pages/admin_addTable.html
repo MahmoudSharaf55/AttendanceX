@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#1f9678">
     <meta name="msapplication-navbutton-color" content="#1f9678">
     <meta name="apple-mobile-web-app-status-bar-style" content="#1f9678">
-    <title>AttendanceX | اضافة طلاب</title>
+    <title>AttendanceX | اضافة جدول</title>
     <link rel="icon" href="../img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
     <link href="../css/ionicons.min.css" rel="stylesheet">
     <link href="../css/sweetalert2.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/menu_style.css">
+    <link href="../css/nice-select.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -40,9 +41,9 @@
                     </a>
                     <div class="open"><span class="cls"></span> <span>
                   <ul class="sub-menu">
-                    <li> <a href="admin_dashboard.html" class="active">اضافة طلاب</a> </li>
+                    <li> <a href="admin_dashboard.html">اضافة طلاب</a> </li>
                     <li> <a href="admin_addDoctor.html">اضافة دكتور</a> </li>
-                    <li> <a href="admin_addTable.html">اضافة الجداول</a> </li>
+                    <li> <a href="admin_addTable.html" class="active">اضافة الجداول</a> </li>
                     <li> <a href="#" onclick="signOutAdmin()">تسجيل الخروج</a> </li>
                   </ul>
                   </span> <span class="cls"></span>
@@ -57,16 +58,16 @@
         <header>
             <div class="header text-center">
                 <h1 class="dm-h">
-                    اضافة طلاب
+                    اضافة جدول
                 </h1>
             </div>
             <div class="text-center">
-                <div class="double-hr-awesome"></div>
+                <div class="double-hr-awesome-reverse"></div>
             </div>
         </header>
-        <form class="text-center m-auto" id="addStudentsForm">
+        <form class="text-center m-auto" id="addDoctorForm">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <input type="text" class="form-control dm-input direction-rtl" name="dept"
                                placeholder="القسم (مثال: CS)" required>
@@ -74,34 +75,43 @@
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
+                <div class="col-sm-6">
                     <div class="form-group">
                         <input type="number" class="form-control dm-input direction-rtl" name="level"
-                               placeholder="الفرقة (مثال: 1)" required>
+                               placeholder="الفرقة" required>
                     </div>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8">
-                    <div class="form-group">
-                        <input type="number" class="form-control dm-input direction-rtl" name="section"
-                               placeholder="السيكشن (مثال: 5)" required>
+                <div class="col-sm-6">
+                    <button class="btn btn-primary w-100 my-2" type="submit">تحميل المواد وانشاء الجدول</button>
+                </div>
+            </div>
+            <div class="row">
+                <h6 class="col-sm-6 text-right">
+                    السبت <i class="fa fa-calendar"></i>
+                </h6>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-6">
+                    <select style="display: none;">
+                    </select>
+                    <div class="nice-select border-top-left-rounded border-bottom-right-rounded direction-rtl w-100 my-2"
+                         tabindex="0">
+                        <span class="current" id="current_report_type">المادة</span>
+                        <ul class="list w-100" id="report_type_select_options_list">
+                            <li data-value="absence" class="option">عربي</li>
+                            <li data-value="grades" class="option">انجليزي</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
-                <div class="col-md-4 col-12 my-2 mx-lg-0">
-                    <button class="btn btn-submit w-100" type="submit">اضافة</button>
-                </div>
-                <div class="col-md-4 col-12 my-2 mx-lg-0" id="c">
-                    <input type="file" style="display: none" id="fileInput" accept=".xls,.xlsx">
-                    <button class="btn btn-primary w-100" onclick="browseExcel()" type="button">(Excel) رفع ملف الطلاب</button>
+                <div class="col-sm-6">
+                    <button class="btn btn-submit w-100 my-2" type="submit">اضافة الجدول</button>
                 </div>
             </div>
         </form>
-        <div class="text-center">
-            <button class="dm-h" onclick="downloadTemplate()">تنزيل نموذج لملف الطلاب <i class="ti-download"></i></button>
-        </div>
     </div>
 </section>
 <script src="../js/jquery-3.2.1.min.js"></script>
@@ -110,30 +120,16 @@
 <script src="../js/active.js"></script>
 <script src="../js/plugin.js"></script>
 <script src="../js/sweetalert2.js"></script>
+<script src="../js/jquery.nice-select.min.js"></script>
 <script src="../js/utils.js"></script>
-<script src="../js/shim.min.js"></script>
-<script src="../js/xlsx.min.js"></script>
-<script src="../js/filesaver.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
 <script src="../js/firebase-api.js"></script>
-<script src="../js/admin_dashboard_controller.js"></script>
+<script src="../js/admin_addTable_controller.js"></script>
 <script>
-    const token = sessionStorage.getItem('attendancex_admin_token');
-    if (token === undefined || token === null) {
-        signOutAdmin();
-    }
-    const email = sessionStorage.getItem('email');
-    const password = sessionStorage.getItem('password');
-    auth.signInWithEmailAndPassword(email, password).then(cred => {
-        if (email === cred.user.email) {
-            console.log(cred);
-        } else {
-            signOutAdmin();
-        }
-    }).catch(error => {
-        signOutAdmin();
+    $(document).ready(function () {
+        $('select').niceSelect();
     });
 </script>
 </body>
