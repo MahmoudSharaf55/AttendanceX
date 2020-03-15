@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#1f9678">
+    <meta name="msapplication-navbutton-color" content="#1f9678">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1f9678">
+    <title>AttendanceX | اضافة دكتور</title>
+    <link rel="icon" href="../img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link href="../css/owl.carousel.min.css" rel="stylesheet">
+    <link href="../css/slick.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/themify-icons.css" rel="stylesheet">
+    <link href="../css/ionicons.min.css" rel="stylesheet">
+    <link href="../css/sweetalert2.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/menu_style.css">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<button id="dark-mode-toggle" class="btn btn-primary d-flex"
+        style="position: fixed;bottom:10px;left:10px;z-index: 1000;min-width: 30px;height: 40px">
+    <i class="fa fa-sun-o"></i>
+</button>
+<div id="preloader">
+    <div class="color-load"></div>
+</div>
+<div class="nav-menu fixed-top is-scrolling">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-dark">
+                    <a class="navbar-brand p-0" href="admin_dashboard.html">
+                        <img src="../img/logoAR.png" alt="" height="65">
+                    </a>
+                    <div class="open"><span class="cls"></span> <span>
+                  <ul class="sub-menu">
+                    <li> <a href="admin_dashboard.html">اضافة طلاب</a> </li>
+                    <li> <a href="admin_addDoctor.html" class="active">اضافة دكتور</a> </li>
+                    <li> <a href="#">اضافة الجداول</a> </li>
+                    <li> <a href="#" onclick="signOutAdmin()">تسجيل الخروج</a> </li>
+                  </ul>
+                  </span> <span class="cls"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="section_padding_100_50">
+    <div class="container">
+        <header>
+            <div class="header text-center">
+                <h1 class="dm-h">
+                    اضافة دكتور
+                </h1>
+            </div>
+            <div class="text-center">
+                <div class="double-hr-awesome-reverse"></div>
+            </div>
+        </header>
+        <form class="text-center m-auto" id="addDoctorForm">
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control dm-input direction-rtl" name="name"
+                               placeholder="الاسم" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control dm-input direction-rtl" name="nationalID"
+                               placeholder="الرقم القومي" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control dm-input direction-rtl" name="password"
+                               placeholder="الرقم السري" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary w-100 my-2" type="submit">اضافة</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/active.js"></script>
+<script src="../js/plugin.js"></script>
+<script src="../js/sweetalert2.js"></script>
+<script src="../js/utils.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+<script src="../js/firebase-api.js"></script>
+<script src="../js/admin_addDoctor_controller.js"></script>
+</body>
+</html>

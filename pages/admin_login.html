@@ -24,7 +24,7 @@
 </head>
 <body>
 <button id="dark-mode-toggle" class="btn btn-primary d-flex" data-page="login-page"
-        style="position: fixed;bottom:10px;z-index: 1000;min-width: 30px;height: 40px">
+        style="position: fixed;bottom:10px;left:10px;z-index: 1000;min-width: 30px;height: 40px">
     <i class="fa fa-sun-o"></i>
 </button>
 <div id="preloader">
@@ -54,7 +54,7 @@
 <section class="login-area mt-75 d-flex align-items-center">
     <div class="container row m-3 m-sm-auto d-flex align-content-center place-content-center p-0">
         <div class="col-12 col-md-5 p-4 p-lg-5 box-shadow border-top-left-rounded border-bottom-right-rounded-to-lg">
-            <section>
+            <form id="login_form">
                 <div class="row m-auto">
                     <div class="col-md-12 text-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80pt" height="80pt" viewBox="0 0 64 64" version="1.1">
@@ -66,19 +66,19 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="email" class="form-control dm-input" name="name" id="email" placeholder="Your Email (Eg. example@email.com)" required>
+                            <input type="email" class="form-control dm-input" name="email" placeholder="Your Email (Eg. example@email.com)" required>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="password" class="form-control dm-input" name="email" placeholder="Your Password" required>
+                            <input type="password" class="form-control dm-input" name="password" placeholder="Your Password" required>
                         </div>
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-hover-shadow w-100" onclick="onLocation('admin_dashboard.html')">تسجيل الدخول</button>
+                        <button type="submit" class="btn btn-hover-shadow w-100">تسجيل الدخول</button>
                     </div>
                 </div>
-            </section>
+            </form>
         </div>
         <div class="col-5 d-none d-md-block login-vector-bg text-center m-0 p-5 box-shadow border-bottom-right-rounded">
             <img class="img-fluid" src="../img/login-vector.png" width="300" height="300" alt="">
@@ -90,29 +90,16 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/bubbly-bg.js"></script>
 <script src="../js/sweetalert2.js"></script>
-<script src="../js/footer-reveal.min.js"></script>
 <script src="../js/utils.js"></script>
 <script src="../js/active.js"></script>
 <script src="../js/plugin.js"></script>
-</body>
+<script src="../js/login_auth.js"></script>
 <script>
     if (darkMode === 'enabled') {
         addBubbleBg('#111');
     }else{
         addBubbleBg('#eee');
     }
-    $(document).ready(function () {
-        $(document).delegate('.open', 'click', function (event) {
-            $(this).addClass('oppenned');
-            event.stopPropagation();
-        })
-        $(document).delegate('body', 'click', function (event) {
-            $('.open').removeClass('oppenned');
-        })
-        $(document).delegate('.cls', 'click', function (event) {
-            $('.open').removeClass('oppenned');
-            event.stopPropagation();
-        });
-    });
 </script>
+</body>
 </html>

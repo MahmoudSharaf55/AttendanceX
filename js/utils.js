@@ -12,22 +12,25 @@ const Toast = Swal.mixin({
     timer: 3000,
     timerProgressBar: true,
 });
-function showToast(title,icon) {
+
+function showToast(title, icon) {
     Toast.fire({
         icon: icon,
         title: title
     });
 }
-function showAlert(title,description,icon,buttonTxt) {
+
+function showAlert(title, description, icon, buttonTxt) {
     Swal.fire({
         icon: icon,
         title: title,
         text: description,
         confirmButtonText: buttonTxt,
-        confirmButtonColor: '#774f98',
+        confirmButtonColor: '#1f9678',
         allowOutsideClick: false,
     })
 }
+
 function showInfoNotification(title, text) {
     if (typeof window.stackBottomLeft === 'undefined') {
         window.stackBottomLeft = {
@@ -153,4 +156,13 @@ function hideLoader() {
 function showLoader() {
     const preloader = $('<div id="preloader"><div class="color-load"></div></div>').hide().fadeIn('slow');
     $('body').prepend(preloader);
+}
+
+function signOutAdmin() {
+    console.log('sign out');
+    sessionStorage.clear();
+    auth.signOut().then(() => {
+        console.log('admin sign out');
+        document.location = '../pages/admin_login.html';
+    });
 }

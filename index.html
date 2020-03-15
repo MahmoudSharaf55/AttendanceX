@@ -23,7 +23,7 @@
 </head>
 <body>
 <button id="dark-mode-toggle" class="btn btn-primary d-flex"
-        style="position: fixed;bottom:10px;z-index: 1000;min-width: 30px;height: 40px">
+        style="position: fixed;bottom:10px;left:10px;z-index: 1000;min-width: 30px;height: 40px">
     <i class="fa fa-sun-o"></i>
 </button>
 <div id="preloader">
@@ -100,20 +100,6 @@
 <script src="js/plugin.js"></script>
 </body>
 <script>
-    $(document).ready(function () {
-        $(document).delegate('.open', 'click', function (event) {
-            $(this).addClass('oppenned');
-            event.stopPropagation();
-        })
-        $(document).delegate('body', 'click', function (event) {
-            $('.open').removeClass('oppenned');
-        })
-        $(document).delegate('.cls', 'click', function (event) {
-            $('.open').removeClass('oppenned');
-            event.stopPropagation();
-        });
-    });
-
     function menuscroll() {
         var $navmenu = $('.nav-menu');
         if ($(window).scrollTop() > 50) {

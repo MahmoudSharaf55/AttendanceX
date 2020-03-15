@@ -85,10 +85,8 @@ body {
     display: inline-block;
     height: 50px;
     min-width: 167px;
-    line-height: 46px;
     text-align: center;
     border-radius: 24px 0 24px 0;
-    margin-left: 10px;
     border: 2px solid transparent;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -96,14 +94,36 @@ body {
 }
 
 .btn-primary:hover {
-    background: var(--clr-light);
+    background: var(--background);
     color: var(--clr-primary);
     border: 2px solid var(--clr-primary);
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
 }
+.btn-submit {
+    background-color: #28a745;
+    color: var(--clr-light);
+    font-weight: 500;
+    display: inline-block;
+    height: 50px;
+    min-width: 167px;
+    text-align: center;
+    border-radius: 24px 0 24px 0;
+    border: 2px solid transparent;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
 
+.btn-submit:hover {
+    background: var(--background);
+    color: #28a745;
+    border: 2px solid #28a745;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
 button {
     outline: 0;
     background: none;
@@ -1076,9 +1096,9 @@ div.swal2-popup.swal2-modal .swal2-actions button {
 
 
 .btn-2 {
-    background: #8151B7;
-    color: #fff;
-    box-shadow: 0 6px #5c3a83;
+    background: var(--clr-primary);
+    color: var(--foreground);
+    box-shadow: 0 6px #1F9678;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     transition: all 0.2s ease;
@@ -1090,12 +1110,12 @@ div.swal2-popup.swal2-modal .swal2-actions button {
 }
 
 .btn-2g:hover {
-    box-shadow: 0 4px #5c3a83;
+    box-shadow: 0 4px #1F9678;
     top: 2px;
 }
 
 .btn-2g:active {
-    box-shadow: 0 0 #5c3a83;
+    box-shadow: 0 0 #1F9678;
     top: 6px;
 }
 .btn-2g-cancel{
